@@ -28,18 +28,18 @@ function TodoModalEdit(props) {
         <FaEdit />
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal className="editModal" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Edit Task</Modal.Title>
         </Modal.Header>
         <Modal.Body className="ModalEditBody">
           <div>
               <label>Existing Task</label>
-              <input type="text" value={task} disabled={true}/>
+              <input className="ModalEditBodyinput1" type="text" value={task} disabled={true}/>
           </div>
           <div>
               <label>New Task</label>
-              <input type="text" onChange={EditedInput} autoFocus={true} />
+              <input className="ModalEditBodyinput2" type="text" onChange={EditedInput} autoFocus={true} />
           </div>
           
           
@@ -51,7 +51,7 @@ function TodoModalEdit(props) {
           >
             Update
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="danger" onClick={handleClose}>
             Close
           </Button>
         </Modal.Footer>

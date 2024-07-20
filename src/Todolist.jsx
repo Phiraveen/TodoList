@@ -107,7 +107,7 @@ export default function Todolist() {
                 task={aaa.task}
               />
 
-              <TodoDeleteModal handleDelete={handleDelete} delid={aaa.id} />
+              <TodoDeleteModal handleDelete={handleDelete} task={aaa.task} delid={aaa.id} />
             </div>
           ))}
         </ul>

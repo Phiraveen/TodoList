@@ -9,7 +9,7 @@ function TodoDeleteModal(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const {handleDelete,delid} = props;
+  const {handleDelete,task,delid} = props;
   const handleTwoFunctions = (id) => {
     handleClose();
     handleDelete(id);
@@ -21,11 +21,14 @@ function TodoDeleteModal(props) {
         <MdDelete />
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+        <Modal className='delModal' show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Delete Task</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Are you Sure ?</Modal.Body>
+        <Modal.Body className='delModalBody'>
+          <label>Do you confirm to Delete this task?</label>
+          <input type="text" value={task} disabled={true}/>
+          </Modal.Body>
         <Modal.Footer>
           <Button variant="danger" onClick={() => handleTwoFunctions(delid)}>
             Yes
