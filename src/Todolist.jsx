@@ -3,6 +3,9 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Todolist.css";
 import TodoModalEdit from "./TodoModalEdit";
 import TodoDeleteModal from "./TodoDeleteModal";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 export default function Todolist() {
   const [listofItems, setlistofItems] = useState([]);
@@ -74,7 +77,9 @@ export default function Todolist() {
   }, []);
 
   return (
-    <div className="mainCont">
+    <Container>
+      <Row>
+      <div className="mainCont">
       <div className="inputCont">
         <input
           ref={inputref}
@@ -108,5 +113,8 @@ export default function Todolist() {
         </ul>
       </div>
     </div>
+      </Row>
+    </Container>
+   
   );
 }

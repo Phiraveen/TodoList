@@ -23,8 +23,8 @@ function TodoModalEdit(props) {
   };
 
   return (
-    <>
-      <Button variant="primary" onClick={handleShow}>
+        <>
+        <Button variant="primary" onClick={handleShow}>
         <FaEdit />
       </Button>
 
@@ -56,7 +56,7 @@ function TodoModalEdit(props) {
           </Button>
         </Modal.Footer>
       </Modal>
-    </>
+        </>
   );
 }
 
