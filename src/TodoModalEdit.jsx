@@ -30,16 +30,13 @@ function TodoModalEdit(props) {
 
       <Modal className="editModal" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Edit Task</Modal.Title>
+          <Modal.Title>Update Task</Modal.Title>
         </Modal.Header>
         <Modal.Body className="ModalEditBody">
+         
           <div>
-              <label>Existing Task</label>
-              <input className="ModalEditBodyinput1" type="text" value={task} disabled={true}/>
-          </div>
-          <div>
-              <label>New Task</label>
-              <input className="ModalEditBodyinput2" type="text" onChange={EditedInput} autoFocus={true} />
+              <label>Edit Task</label>
+              <input className="ModalEditBodyinput2" type="text" placeholder={task} onChange={EditedInput} autoFocus={true} />
           </div>
           
           

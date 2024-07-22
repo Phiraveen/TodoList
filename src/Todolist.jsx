@@ -5,19 +5,22 @@ import TodoModalEdit from "./TodoModalEdit";
 import TodoDeleteModal from "./TodoDeleteModal";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { RotatingLines } from 'react-loader-spinner';
 
 export default function Todolist() {
   const [listofItems, setlistofItems] = useState([]);
   const [inputdata, setinputdata] = useState("");
+  const [loading, setloading] = useState(false);
   const inputref = useRef(null);
 
   const handleget = async () => {
+    setloading(true);
     let response = await axios.get(
       "https://todo-data-uu2x.onrender.com/todoList"
     );
     console.log(response.data);
     setlistofItems(response.data);
+    setloading(false);
   };
 
   const handleinput = (e) => {
@@ -96,6 +99,19 @@ export default function Todolist() {
       </div>
 
       <div className="outputCont">
+        {
+          loading && (<div className="rotateSquare"><RotatingLines
+            visible={true}
+            height="96"
+            width="96"
+            color="grey"
+            strokeWidth="5"
+            animationDuration="0.75"
+            ariaLabel="rotating-lines-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+            /></div>)
+        }
         <ul>
           {listofItems.map((aaa, i) => (
             <div key={i} className="EachTask">
